@@ -1,9 +1,8 @@
-class Match
+  class Match
   include Mongoid::Document
   
-  field :first_name, type: String
   field :season, type: String
-  field :id, type: String
+  field :matchId, type: String
   field :hostName, type: String
   field :hostId, type: Integer
   field :hostGoals, type: Integer
@@ -13,7 +12,7 @@ class Match
   field :group, type: Integer
   field :date, type: DateTime
   
-  index :id
-  index :hostId
-  index :guestId
+  index ({ id: 1 })
+  index ({ hostId: 1 })
+  index ({ guestId: 1 })
 end

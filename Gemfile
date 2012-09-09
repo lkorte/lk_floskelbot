@@ -1,5 +1,5 @@
 source "http://rubygems.org"
 gem "mongo"
-gem "mongoid"
+gem "mongoid", "~> 3.0.0"
 gem "bson_ext"
 gem "httparty"

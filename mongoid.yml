@@ -1,2 +1,6 @@
-host: localhost
-database: botliga
+development:
+  sessions:
+    default:
+      database: botliga
+      hosts:
+        - localhost:27017

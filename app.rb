@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# coding: utf-8
+
 $:.unshift File.dirname(__FILE__)
 
 require 'yaml'
@@ -7,13 +9,13 @@ require 'match'
 require 'guess'
 require 'api_client'
 
-Mongoid.database = Mongo::Connection.new('localhost','27017').db('botliga')
+Mongoid.load!("mongoid.yml", :development)
 
 token_list = YAML.load_file('tokens.yml')
 bot_token = token_list['bot2']
 
 (1..34).each do |group|
-	matches = Match.where(:group => group)
+	matches = Match.where(:group => group).order_by([:matchId, :asc])
 	
 	matches.each do |match|
 		guess = Guess.new
