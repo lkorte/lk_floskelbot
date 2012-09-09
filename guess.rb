@@ -9,7 +9,7 @@ class Guess
     @chars = ('a'..'z').to_a
     @chars.concat ['ä','ö','ü','ß']
     @chars.concat ('0'..'9').to_a
-	end
+  end
 
   def result
     score_home = score_from_phrase
