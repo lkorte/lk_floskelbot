@@ -5,21 +5,12 @@ require 'phrase'
 class Guess
   MAX_SCORE = 3
   
-	def initialize
-		@scores = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,4,4,5]
+  def initialize
     @chars = ('a'..'z').to_a
     @chars.concat ['ä','ö','ü','ß']
     @chars.concat ('0'..'9').to_a
 	end
-	
-	# def result
-	#     scores_home = @scores.shuffle
-	#     scores_guest = @scores.shuffle
-	#     result_home = scores_home[rand(scores_home.count-1)]
-	#     result_guest = scores_guest[rand(scores_guest.count-1)]
-	#     "#{result_home}:#{result_guest}"
-	#   end
-  
+
   def result
     score_home = score_from_phrase
     score_guest = score_from_phrase
