@@ -3,7 +3,7 @@
 require 'phrase'
 
 class Guess
-  MAX_SCORE = 3
+  MAX_SCORE = 4
   
   def initialize
     @chars = ('a'..'z').to_a
