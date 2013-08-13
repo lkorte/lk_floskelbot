@@ -2,3 +2,4 @@
 data/*
 tokens.yml
 .bundle
+.idea
